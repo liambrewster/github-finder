@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import RepoItem from './RepoItem'
 
 function RepoList({repos}) {
     return (
@@ -8,7 +9,7 @@ function RepoList({repos}) {
                     Most Recent Repositories
                 </h2>
                 {repos.map((repo) => (
-                    <h3>{repo.name}</h3>
+                    <RepoItem key={repo.id} repo={repo}/>
                 )
 
                 )}
@@ -18,7 +19,7 @@ function RepoList({repos}) {
 }
 
 RepoList.propTypes = {
-    repose: PropTypes.array.isRequired
+    repos: PropTypes.array.isRequired
 }
 
 export default RepoList
